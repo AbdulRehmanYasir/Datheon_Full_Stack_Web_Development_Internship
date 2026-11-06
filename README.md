@@ -1,33 +1,104 @@
-# Internship Projects
+ <div align="center">
 
-Four self-contained front-end projects built with semantic HTML, modern CSS and vanilla JavaScript.
+# 🌐 DATHEON FULL STACK WEB DEVELOPMENT INTERNSHIP
 
-| Folder | Project | External data |
-|---|---|---|
-| [`portfolio/`](./portfolio/) | Personal portfolio with theme switching, responsive navigation and project dialogs | None |
-| [`task-manager/`](./task-manager/) | Task CRUD app with categories, due dates, filters, drag-and-drop ordering and local storage | None |
-| [`weather-dashboard/`](./weather-dashboard/) | City weather search with current conditions, a five-day forecast and dynamic backgrounds | [Open-Meteo](https://open-meteo.com) |
-| [`ecommerce-store/`](./ecommerce-store/) | Product catalogue with filters, persistent cart and simulated checkout | [FakeStoreAPI](https://fakestoreapi.com) |
+### Internship Projects — November 2026
 
-## Run locally
+A collection of web development projects built during the Datheon Full Stack Web Development Internship, focusing on responsive design, interactive functionality, and practical frontend development.
 
-Each project can be opened directly in a browser. For the most reliable local behaviour, serve the workspace over HTTP:
+**Learn. Build. Improve.**
 
-```powershell
-python -m http.server 8000
+</div>
+
+---
+
+## 📌 About
+
+This repository contains four web development projects created as part of the **Datheon Full Stack Web Development Internship**.
+
+Each project focuses on applying HTML, CSS, and JavaScript to build functional, responsive, and user-friendly web applications.
+
+## ✨ Projects
+
+| Project | Description |
+|---|---|
+| **Portfolio Website** | Personal portfolio showcasing skills, projects, and developer profile. |
+| **Task Manager** | Task management application with creation, completion, filtering, and local storage. |
+| **Weather Dashboard** | Weather application displaying current conditions and forecasts. |
+| **E-Commerce Store** | Online storefront featuring product browsing, shopping cart, and checkout interactions. |
+
+## 🛠 Tech Stack
+
+- HTML5
+- CSS3
+- JavaScript
+- Local Storage
+- Responsive Web Design
+- Git & GitHub
+
+## 🚀 Key Highlights
+
+- Responsive layouts for different screen sizes.
+- Interactive user interfaces and animations.
+- Dynamic content and JavaScript functionality.
+- Data persistence using local storage.
+- Improved accessibility and reduced-motion support.
+- Organized project structure and documentation.
+
+## 📂 Repository Structure
+
+```text
+internship-projects/
+│
+├── portfolio/
+├── task-manager/
+├── weather-dashboard/
+├── ecommerce-store/
+│
+└── README.md
 ```
 
-Then open `http://localhost:8000/<project>/` in a browser. Weather and store data require an internet connection.
+## 💻 Getting Started
 
-## Validation
+Clone the repository:
 
-There is no build step or package manifest. JavaScript syntax can be checked with:
-
-```powershell
-node --check portfolio\script.js
-node --check task-manager\script.js
-node --check weather-dashboard\script.js
-node --check ecommerce-store\script.js
+```bash
+git clone https://github.com/AbdulRehmanYasir/Datheon_Full_Stack_Web_Development_Internship.git
 ```
 
-See each project README for its feature details and deployment notes. Each folder can be deployed independently to GitHub Pages, Vercel or Netlify.
+Open the repository folder and launch any project's `index.html` file in your browser.
+
+No additional dependencies are required.
+
+## 📋 Internship Details
+
+- **Organization:** Datheon
+- **Program:** Full Stack Web Development Internship
+- **Duration:** November 1 – November 29, 2026
+- **Projects:** 4
+
+## 👨‍💻 Author
+
+<div align="center">
+
+### Abdul Rehman Yasir
+
+**BS Artificial Intelligence Student | Developer**
+
+Building real-world software & AI projects.
+
+[GitHub](https://github.com/AbdulRehmanYasir)
+
+</div>
+
+---
+
+<div align="center">
+
+### 🌐 DATHEON INTERNSHIP PROJECTS
+
+**Learn. Build. Improve.**
+
+Built with HTML, CSS & JavaScript.
+
+</div>
