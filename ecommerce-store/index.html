@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stockroom | Everyday goods</title>
+  <meta name="description" content="Browse everyday goods with category filters, search, a persistent cart and demo checkout.">
+  <meta name="theme-color" content="#101a3a">
+  <meta property="og:title" content="Stockroom Storefront">
+  <meta property="og:description" content="Browse everyday goods with category filters, search, a persistent cart and demo checkout.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap bar">
+      <a class="brand" href="./">Stockroom</a>
+      <input id="search" class="search" type="search" placeholder="Search products" aria-label="Search products">
+      <button id="cart-btn" class="cart-btn" type="button" aria-label="Open cart">Cart <span id="cart-badge" class="badge-count">0</span></button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="intro">
+      <h1>Good things for everyday life.</h1>
+      <p>Electronics, jewelry and clothing, picked and priced fairly. Free shipping on orders over $100.</p>
+    </section>
+
+    <div class="filters" role="group" aria-label="Filter by category">
+      <button class="filter on" type="button" data-cat="all" aria-pressed="true">All</button>
+      <button class="filter" type="button" data-cat="electronics" aria-pressed="false">Electronics</button>
+      <button class="filter" type="button" data-cat="jewelry" aria-pressed="false">Jewelry</button>
+      <button class="filter" type="button" data-cat="clothing" aria-pressed="false">Clothing</button>
+      <span id="result-count" class="result-count" aria-live="polite"></span>
+    </div>
+
+    <div id="status" class="status" hidden></div>
+    <div id="grid" class="grid" aria-busy="true"></div>
+  </main>
+  <footer class="site-footer">Made with ❤️ by Abdul Rehman Yasir</footer>
+
+  <div id="overlay" class="overlay" hidden></div>
+  <aside id="drawer" class="drawer" aria-label="Shopping cart" aria-hidden="true" tabindex="-1">
+    <div class="drawer-head">
+      <h2>Your cart</h2>
+      <button id="close-cart" class="plain" aria-label="Close cart">Close</button>
+    </div>
+    <ul id="cart-items" class="cart-items"></ul>
+    <p id="cart-empty" class="cart-empty">Your cart is empty. Add something you like.</p>
+    <div id="cart-foot" class="cart-foot">
+      <dl class="totals">
+        <div><dt>Subtotal</dt><dd id="t-sub"></dd></div>
+        <div><dt>Tax (8%)</dt><dd id="t-tax"></dd></div>
+        <div><dt>Shipping</dt><dd id="t-ship"></dd></div>
+        <div class="grand"><dt>Total</dt><dd id="t-total"></dd></div>
+      </dl>
+      <button id="checkout-btn" class="primary" type="button">Checkout</button>
+    </div>
+  </aside>
+
+  <dialog id="checkout" aria-labelledby="co-title">
+    <div id="co-form-view">
+      <h2 id="co-title">Checkout</h2>
+      <p class="muted">This is a demo store. No payment is taken.</p>
+      <form id="co-form">
+        <label>Full name<input name="name" required autocomplete="name"></label>
+        <label>Email<input name="email" type="email" required autocomplete="email"></label>
+        <label>Shipping address<textarea name="address" rows="2" required autocomplete="street-address"></textarea></label>
+        <p class="co-total">Order total: <strong id="co-total"></strong></p>
+        <div class="row">
+          <button type="button" class="plain" id="co-cancel">Back to cart</button>
+          <button type="submit" class="primary">Place order</button>
+        </div>
+      </form>
+    </div>
+    <div id="co-done-view" hidden>
+      <h2>Thanks, your order is in.</h2>
+      <p>Order <strong id="order-id"></strong> is confirmed. A receipt is on its way to <span id="order-email"></span>.</p>
+      <button id="co-close" class="primary">Keep shopping</button>
+    </div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>

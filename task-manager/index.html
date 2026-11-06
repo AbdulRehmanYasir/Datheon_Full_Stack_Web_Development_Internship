@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Taskbook | Simple task manager</title>
+  <meta name="description" content="A focused task manager with categories, due dates, filters and local storage.">
+  <meta name="theme-color" content="#dfe6dc">
+  <meta property="og:title" content="Taskbook Task Manager">
+  <meta property="og:description" content="A focused task manager with categories, due dates, filters and local storage.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>Taskbook</h1>
+      <p id="summary" aria-live="polite"></p>
+    </header>
+
+    <form id="task-form" autocomplete="off">
+      <input id="task-input" type="text" placeholder="What needs doing?" maxlength="120" required aria-label="Task name">
+      <select id="task-category" aria-label="Category">
+        <option>Work</option>
+        <option>Personal</option>
+        <option>Study</option>
+      </select>
+      <input id="task-due" type="date" aria-label="Due date">
+      <button class="add" type="submit">Add task</button>
+    </form>
+
+    <div class="toolbar">
+      <div class="filters" role="group" aria-label="Filter by status">
+        <button class="chip on" type="button" data-filter="all" aria-pressed="true">All</button>
+        <button class="chip" type="button" data-filter="active" aria-pressed="false">Active</button>
+        <button class="chip" type="button" data-filter="completed" aria-pressed="false">Completed</button>
+      </div>
+      <input id="search" type="search" placeholder="Search tasks" aria-label="Search tasks">
+    </div>
+
+    <ul id="task-list"></ul>
+    <p id="empty" class="empty" hidden></p>
+
+    <footer>
+      <span id="count"></span>
+      <button id="clear-done" class="link" type="button">Clear completed</button>
+    </footer>
+    <p class="hint">Tip: drag a task by its handle to reorder (when viewing All with no search). Double-click a task to edit it.</p>
+  </main>
+  <footer class="site-footer">Made with ❤️ by Abdul Rehman Yasir</footer>
+  <script src="script.js"></script>
+</body>
+</html>

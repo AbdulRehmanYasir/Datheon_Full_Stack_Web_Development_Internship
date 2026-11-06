@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Abdul Rehman Yasir | AI Engineering Student</title>
+  <meta name="description" content="Portfolio of Abdul Rehman Yasir, BS Artificial Intelligence student at UCP Lahore.">
+  <meta name="theme-color" content="#edf1f0">
+  <meta property="og:title" content="Abdul Rehman Yasir | AI Engineering Student">
+  <meta property="og:description" content="Portfolio of Abdul Rehman Yasir, BS Artificial Intelligence student at UCP Lahore.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap bar">
+      <a class="logo" href="#top">Abdul Rehman</a>
+      <nav id="nav" aria-label="Main">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="tools">
+        <button id="theme-toggle" class="pill" type="button" aria-label="Switch colour theme">Dark</button>
+        <button id="menu-btn" class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div>
+          <h1>I'm Abdul Rehman, an AI student who likes shipping working software.</h1>
+          <p class="lead">I'm studying BS Artificial Intelligence at the University of Central Punjab in Lahore, building toward a career in AI engineering. Along the way I write C++, JavaScript and React, and I enjoy getting a project from a rough idea to something people can open and use.</p>
+          <div class="actions">
+            <a class="btn" href="#projects">See my projects</a>
+          </div>
+        </div>
+        <aside class="now" aria-label="What I'm up to">
+          <h2>Right now</h2>
+          <dl>
+            <dt>Fellowship</dt><dd>Dev Weekends Fellowship 2026, working through DSA, projects and mentorship</dd>
+            <dt>Learning</dt><dd>React state management with Context API and Redux Toolkit</dd>
+            <dt>Studying</dt><dd>BS Artificial Intelligence, UCP Lahore</dd>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap narrow">
+        <h2>About me</h2>
+        <p>I started with the fundamentals: C++ and object-oriented design in class, assembly on the 8086 for a computer organization lab, and JavaScript on my own. That mix means I like knowing what happens underneath a framework as well as how to use it.</p>
+        <p>Outside coursework I build small full-stack projects, practise data structures and algorithms, and chase certifications that force me to write real code, like freeCodeCamp's JavaScript Algorithms and Data Structures. I'm interested in AI engineering first, with software, web development and cloud systems as the foundation underneath it.</p>
+      </div>
+    </section>
+
+    <section id="skills" class="tint">
+      <div class="wrap">
+        <h2>Tech stack</h2>
+        <div class="skills-grid" id="skills-grid"></div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap">
+        <h2>Featured projects</h2>
+        <ul class="project-list" id="project-list"></ul>
+      </div>
+    </section>
+
+    <section id="resume" class="tint">
+      <div class="wrap narrow">
+        <h2>Resume</h2>
+        <ul class="timeline">
+          <li><strong>BS Artificial Intelligence</strong><span>University of Central Punjab, Lahore. Started 2025.</span></li>
+          <li><strong>Dev Weekends Fellowship 2026</strong><span>Three-month technical fellowship covering DSA, projects and mentorship. Also selected for Kirothon 2026.</span></li>
+          <li><strong>JavaScript Algorithms and Data Structures</strong><span>freeCodeCamp certification, earned August 2026.</span></li>
+        </ul>
+        <p class="muted">Resume details are listed above. A downloadable PDF can be added here when the final document is ready.</p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap narrow">
+        <h2>Let's talk</h2>
+        <p>I'm open to internships, collaborations and conversations about AI and software. Email is the fastest way to reach me.</p>
+        <p class="muted">Add a professional email address and profile links here before publishing.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap foot">Made with ❤️ by Abdul Rehman Yasir</footer>
+
+  <dialog id="project-modal" aria-labelledby="modal-title">
+    <form method="dialog"><button class="close" aria-label="Close details">Close</button></form>
+    <h3 id="modal-title"></h3>
+    <p id="modal-desc"></p>
+    <h4>What I learned</h4>
+    <p id="modal-learned"></p>
+    <ul class="tags" id="modal-tags"></ul>
+    <a id="modal-link" class="btn" target="_blank" rel="noopener noreferrer">View source</a>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>

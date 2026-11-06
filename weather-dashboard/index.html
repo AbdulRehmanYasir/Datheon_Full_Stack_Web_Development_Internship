@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Skyline | Weather for any city</title>
+  <meta name="description" content="Search for current conditions and a five-day forecast for any city.">
+  <meta name="theme-color" content="#2f80d8">
+  <meta property="og:title" content="Skyline Weather Dashboard">
+  <meta property="og:description" content="Search for current conditions and a five-day forecast for any city.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-mood="clear-day">
+  <div class="weather-effects" aria-hidden="true"></div>
+  <main class="shell">
+    <form id="search-form" role="search">
+      <input id="city-input" type="search" placeholder="Search a city, e.g. Lahore" aria-label="City name" required>
+      <button id="search-button" type="submit">Search</button>
+    </form>
+
+    <div id="loader" class="loader" hidden role="status"><span class="spinner"></span>Fetching the latest conditions</div>
+    <p id="error" class="error" hidden role="alert"></p>
+
+    <section id="weather" hidden>
+      <div class="current">
+        <div>
+          <h1 id="city"></h1>
+          <p id="local-time" class="sub"></p>
+          <p class="temp"><span id="temp"></span><sup>&deg;C</sup></p>
+          <p id="condition" class="cond"></p>
+        </div>
+        <div id="main-icon" class="icon-big" aria-hidden="true"></div>
+      </div>
+
+      <dl class="stats">
+        <div><dt>Feels like</dt><dd id="feels"></dd></div>
+        <div><dt>Humidity</dt><dd id="humidity"></dd></div>
+        <div><dt>Wind</dt><dd id="wind"></dd></div>
+        <div><dt>Pressure</dt><dd id="pressure"></dd></div>
+      </dl>
+
+      <h2>Next 5 days</h2>
+      <ul id="forecast" class="forecast"></ul>
+    </section>
+  </main>
+  <footer class="weather-footer">Made with ❤️ by Abdul Rehman Yasir</footer>
+  <script src="script.js"></script>
+</body>
+</html>
