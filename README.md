@@ -99,6 +99,6 @@ Building real-world software & AI projects.
 
 **Learn. Build. Improve.**
 
-Built with HTML, CSS & JavaScript.
+Made with ❤️ by Abdul Rehman Yasir.
 
 </div>
