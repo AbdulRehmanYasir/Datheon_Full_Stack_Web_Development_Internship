@@ -1,24 +1,8 @@
- <div align="center">
+# Datheon Full Stack Web Development Internship
 
-# 🌐 DATHEON FULL STACK WEB DEVELOPMENT INTERNSHIP
+This repository contains four projects completed during the Datheon Full Stack Web Development Internship.
 
-### Internship Projects — November 2026
-
-A collection of four web development projects built during the Datheon Full Stack Web Development Internship, focusing on responsive design, interactive functionality, and practical frontend development.
-
-**Learn. Build. Improve.**
-
-</div>
-
----
-
-## 📌 About
-
-This repository contains four web development projects created as part of the **Datheon Full Stack Web Development Internship**.
-
-Each project demonstrates practical applications of HTML, CSS, and JavaScript, with an emphasis on functional interfaces, responsive layouts, accessibility, and interactive user experiences.
-
-## ✨ Projects
+## Projects
 
 | Project | Description |
 |---|---|
@@ -27,7 +11,7 @@ Each project demonstrates practical applications of HTML, CSS, and JavaScript, w
 | **Task Manager — Taskbook** | Interactive task management application with categories, due dates, search, filters, editing, and local storage. |
 | **Weather Dashboard — Skyline** | Weather application featuring city search, current conditions, five-day forecasts, and dynamic weather visuals. |
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - HTML5
 - CSS3
@@ -37,18 +21,7 @@ Each project demonstrates practical applications of HTML, CSS, and JavaScript, w
 - Responsive Web Design
 - Git & GitHub
 
-## 🚀 Key Highlights
-
-- Four independent, browser-based web applications.
-- Responsive layouts for mobile, tablet, and desktop screens.
-- Interactive user interfaces and dynamic content.
-- Persistent data using browser local storage.
-- API integration for product and weather data.
-- Search, filtering, and data management functionality.
-- Accessibility improvements and reduced-motion support.
-- Organized project structure and individual documentation.
-
-## 📂 Repository Structure
+## Repository Structure
 
 ```text
 Datheon_Full_Stack_Web_Development_Internship/
@@ -80,70 +53,39 @@ Datheon_Full_Stack_Web_Development_Internship/
 └── README.md
 ```
 
-## 💻 Getting Started
+## Getting Started
 
-**1. Clone the repository**
+1. Clone the repository:
 
 ```bash
 git clone https://github.com/AbdulRehmanYasir/Datheon_Full_Stack_Web_Development_Internship.git
 ```
 
-**2. Open the repository folder**
+2. Open the repository folder:
 
 ```bash
 cd Datheon_Full_Stack_Web_Development_Internship
 ```
 
-**3. Run a project**
+3. Open one of the project `index.html` files in a browser.
 
-Open any project's `index.html` file in your browser.
+No package installation or build process is required. The E-Commerce Store and Weather Dashboard require an internet connection for their APIs.
 
-No package installation or build process is required.
+## Verification
 
-**Note:** The E-Commerce Store and Weather Dashboard require an internet connection to access their external APIs.
-
-## 🧪 Project Verification
-
-The projects were reviewed through browser smoke testing and static inspection.
-
-- All four project entry pages were checked.
-- Primary interactive workflows were tested.
-- Local storage persistence was checked.
-- Responsive layouts were inspected at mobile, tablet, and desktop viewport sizes.
-- Weather API error handling was tested.
-- Local asset references were inspected.
+The project entry pages, primary interactions, local storage, responsive layouts, API error handling, and local asset references were checked.
 
 Automated test suites and build scripts are not included in this repository.
 
-## 📋 Internship Details
+## Internship Details
 
 - **Organization:** Datheon
 - **Program:** Full Stack Web Development Internship
 - **Duration:** November 1 – November 29, 2026
 - **Projects:** 4
 
-## 👨‍💻 Author
+## Author
 
-<div align="center">
+Abdul Rehman Yasir
 
-### Abdul Rehman Yasir
-
-**BS Artificial Intelligence Student | Developer**
-
-Building real-world software & AI projects.
-
-[GitHub Profile](https://github.com/AbdulRehmanYasir)
-
-</div>
-
----
-
-<div align="center">
-
-### 🌐 DATHEON INTERNSHIP PROJECTS
-
-**Learn. Build. Improve.**
-
-Made with ❤️ by Abdul Rehman Yasir.
-
-</div>
+[GitHub](https://github.com/AbdulRehmanYasir)

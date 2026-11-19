@@ -4,10 +4,9 @@ const SHIPPING_FEE = 5.99;
 const FREE_SHIPPING_OVER = 100;
 const CART_KEY = "stockroom.cart.v1";
 
-// FakeStoreAPI categories grouped into the three storefront filters
 const CATEGORY_MAP = {
   electronics: ["electronics"],
-  jewelry: ["jewelery"], // the API spells it this way
+  jewelry: ["jewelery"],
   clothing: ["men's clothing", "women's clothing"]
 };
 
@@ -20,7 +19,6 @@ const $ = (s) => document.querySelector(s);
 const money = (n) => new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(n);
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
-// ---------- data ----------
 async function loadProducts() {
   const grid = $("#grid");
   $("#status").hidden = true;
@@ -42,7 +40,6 @@ async function loadProducts() {
   }
 }
 
-// ---------- products ----------
 function badgeFor(p) {
   if (p.rating.rate >= 4.5) return "Top rated";
   if (p.rating.count >= 400) return "Popular";
@@ -73,7 +70,6 @@ function renderProducts() {
   }).join("") : '<p class="status">No products match your search.</p>';
 }
 
-// ---------- cart logic ----------
 function loadCart() {
   try {
     const raw = JSON.parse(localStorage.getItem(CART_KEY));
@@ -91,7 +87,7 @@ function loadCart() {
   } catch { return []; }
 }
 function saveCart() {
-  try { localStorage.setItem(CART_KEY, JSON.stringify(cart)); } catch { /* storage unavailable */ }
+  try { localStorage.setItem(CART_KEY, JSON.stringify(cart)); } catch {}
 }
 
 function addToCart(id) {
@@ -128,7 +124,7 @@ function updateCart() {
   const badge = $("#cart-badge");
   badge.textContent = count;
   badge.classList.remove("bump");
-  void badge.offsetWidth; // restart the animation
+  void badge.offsetWidth;
   badge.classList.add("bump");
 
   $("#cart-items").innerHTML = cart.map((i) => `
@@ -154,7 +150,6 @@ function updateCart() {
   $("#cart-foot").hidden = cart.length === 0;
 }
 
-// ---------- drawer ----------
 const drawer = $("#drawer");
 function openCart() {
   drawer.classList.add("open");
@@ -170,7 +165,6 @@ function closeCart() {
   document.body.style.overflow = "";
 }
 
-// ---------- events ----------
 $("#grid").addEventListener("click", (e) => {
   const btn = e.target.closest(".add");
   if (!btn) return;
@@ -207,7 +201,6 @@ $("#cart-items").addEventListener("click", (e) => {
   if (act === "rm") removeFromCart(id);
 });
 
-// ---------- checkout ----------
 const checkout = $("#checkout");
 $("#checkout-btn").addEventListener("click", () => {
   $("#co-form-view").hidden = false;

@@ -43,7 +43,6 @@ h1 { font-size: clamp(2rem, 6vw, 3.4rem); font-weight: 700; letter-spacing: -.02
 h2 { font-size: clamp(1.6rem, 4vw, 2.1rem); margin-bottom: 1.5rem; }
 p + p { margin-top: 1rem; }
 
-/* header */
 .site-header { position: sticky; top: 0; z-index: 20; background: var(--bg); border-bottom: 1px solid var(--line); }
 .bar { display: flex; align-items: center; justify-content: space-between; height: 64px; }
 .logo { font: 700 1.15rem var(--display); text-decoration: none; }
@@ -60,7 +59,6 @@ nav a:hover, nav a.active { color: var(--ink); }
 .menu-btn[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
 .menu-btn[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* hero */
 .hero { padding: 3.5rem 0 4.5rem; }
 .hero-grid { display: grid; gap: 2.5rem; }
 .hero-grid > * { animation: content-rise .7s both; }
@@ -75,13 +73,11 @@ nav a:hover, nav a.active { color: var(--ink); }
 .now dt { font-weight: 500; font-size: .9rem; color: var(--muted); margin-top: .8rem; }
 .now dd { margin: 0; }
 
-/* skills */
 .skills-grid { display: grid; gap: 1.75rem 2.5rem; }
 .skill-group { border-left: 2px solid var(--line); padding-left: 1.1rem; }
 .skill-group h3 { font-size: 1.1rem; margin-bottom: .5rem; }
 .skill-group li { list-style: none; color: var(--muted); }
 
-/* projects */
 .project-list { padding: 0; list-style: none; border-top: 1px solid var(--line); }
 .project-list li { border-bottom: 1px solid var(--line); animation: content-rise .6s both; }
 .project-list li:nth-child(2) { animation-delay: .1s; }
@@ -98,7 +94,6 @@ nav a:hover, nav a.active { color: var(--ink); }
 .project-details:hover, .project-link:hover { background: var(--ink); color: var(--bg); }
 .project-link.primary-link { background: var(--btn); border-color: var(--btn); color: var(--btn-ink); }
 
-/* resume, contact */
 .timeline { padding: 0; list-style: none; margin-bottom: 2rem; }
 .timeline li { padding: 1rem 0; border-bottom: 1px solid var(--line); }
 .timeline strong { display: block; font-family: var(--display); font-size: 1.1rem; }
@@ -106,7 +101,6 @@ nav a:hover, nav a.active { color: var(--ink); }
 .links { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; padding: 0; list-style: none; margin-top: 1.25rem; font-weight: 500; }
 .foot { padding: 2rem 0 3rem; color: var(--muted); font-size: .9rem; text-align: center; }
 
-/* modal */
 dialog { border: 0; border-radius: 14px; padding: 2rem; width: min(560px, 92vw); background: var(--surface); color: var(--ink); }
 dialog::backdrop { background: rgba(10, 20, 25, .6); }
 dialog[open] { animation: pop .18s ease-out; }

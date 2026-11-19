@@ -13,9 +13,8 @@ Personal portfolio for Abdul Rehman Yasir: hero, about, tech stack, featured pro
 Open `index.html` in a browser, or run `npx serve .`.
 
 ## Publishing notes
-- Project and skill content lives at the top of `script.js`.
-- Add verified repository URLs to the project entries in `script.js`; source links remain hidden until a real URL is supplied.
-- A GitHub profile link is included in the contact section. Add an email address or resume PDF only when you are ready to publish those personal details.
+- Project and skill content is kept at the top of `script.js`.
+- The GitHub profile is included in the contact section. Add an email address or resume PDF only when ready.
 
 ## Deploy (GitHub Pages)
 1. Push this folder to a public GitHub repo.

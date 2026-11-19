@@ -1,4 +1,3 @@
-// Project links are verified against the corresponding public repositories.
 const skills = {
   "Languages": ["C++", "JavaScript (ES6+)", "HTML5 and CSS3", "8086 Assembly"],
   "Frontend": ["React", "Responsive layout", "Context API and Redux Toolkit"],
@@ -11,15 +10,15 @@ const projects = [
     title: "Rayva Cloud",
     summary: "A distributed cloud simulation with a C++ core, a Node.js service layer and a React dashboard.",
     detail: "Rayva Cloud simulates how work is spread across machines in a small cloud. The C++ engine models the nodes, Node.js exposes them over an API, SQLite stores state and a React front end shows what is happening.",
-    learned: "How to split a system into parts that talk to each other cleanly, and how a CMake build ties a C++ project together.",
+    learned: "How to split a system into separate components and connect them in a CMake build.",
     tags: ["C++", "Node.js", "React", "SQLite", "CMake"],
     source: "https://github.com/AbdulRehmanYasir/Rayva-Cloud/tree/main/src"
   },
   {
     title: "Wanderly",
     summary: "A responsive tour and travel website built in React.",
-    detail: "Wanderly is a multi-section travel site built from reusable components. It was my first real exercise in breaking a design into components and passing data through props.",
-    learned: "Component decomposition, props drilling and why state management tools exist.",
+    detail: "Wanderly is a multi-section travel site built from reusable React components.",
+    learned: "Component decomposition, props, state management and responsive layout.",
     tags: ["React", "CSS", "Responsive design"],
     source: "https://github.com/AbdulRehmanYasir/Tour-Travel-App/tree/main/src"
   },
@@ -27,7 +26,7 @@ const projects = [
     title: "Mission Control",
     summary: "A spacecraft flight computer written for the 8086 in assembly.",
     detail: "A lab project for Computer Organization and Assembly Language where the flight computer logic runs in 8086 real mode. Programs are tested in the EMU8086 emulator.",
-    learned: "How registers, memory addressing and interrupts really work, with no framework hiding them.",
+    learned: "Working with registers, memory addressing and interrupts without an application framework.",
     tags: ["8086 Assembly", "EMU8086"],
     source: "https://github.com/AbdulRehmanYasir/mission-control-spacecraft-flight-computer/tree/main/MissionControl"
   },
@@ -45,10 +44,9 @@ const projects = [
 const $ = (s) => document.querySelector(s);
 const store = {
   get(k) { try { return localStorage.getItem(k); } catch { return null; } },
-  set(k, v) { try { localStorage.setItem(k, v); } catch { /* storage blocked */ } }
+  set(k, v) { try { localStorage.setItem(k, v); } catch {} }
 };
 
-/* theme */
 const root = document.documentElement;
 const themeBtn = $("#theme-toggle");
 function setTheme(t) {
@@ -59,7 +57,6 @@ function setTheme(t) {
 setTheme(store.get("theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
 themeBtn.addEventListener("click", () => setTheme(root.dataset.theme === "dark" ? "light" : "dark"));
 
-/* mobile menu */
 const menuBtn = $("#menu-btn");
 const nav = $("#nav");
 function toggleMenu(open) {
@@ -70,12 +67,10 @@ function toggleMenu(open) {
 menuBtn.addEventListener("click", () => toggleMenu(!nav.classList.contains("open")));
 nav.addEventListener("click", (e) => { if (e.target.tagName === "A") toggleMenu(false); });
 
-/* skills */
 $("#skills-grid").innerHTML = Object.entries(skills).map(([group, items]) =>
   `<div class="skill-group"><h3>${group}</h3><ul>${items.map((i) => `<li>${i}</li>`).join("")}</ul></div>`
 ).join("");
 
-/* projects and modal */
 const list = $("#project-list");
 list.innerHTML = projects.map((p, i) => `
   <li><article class="project-row">
@@ -104,7 +99,6 @@ list.addEventListener("click", (e) => {
 });
 modal.addEventListener("click", (e) => { if (e.target === modal) modal.close(); });
 
-/* highlight current section in nav */
 const links = [...nav.querySelectorAll("a")];
 const io = new IntersectionObserver((entries) => {
   entries.forEach((en) => {

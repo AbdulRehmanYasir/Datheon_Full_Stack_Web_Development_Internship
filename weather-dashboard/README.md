@@ -11,7 +11,7 @@ Search any city in the world for live conditions and a 5-day forecast.
 - Remembers your last search; fully responsive
 
 ## Data source
-[Open-Meteo](https://open-meteo.com) for geocoding and weather. It needs no API key, so the app works straight after deploying. To use OpenWeatherMap or WeatherAPI instead, replace `fetchCity` and `fetchWeather` in `script.js` and map the response in `renderWeather`.
+[Open-Meteo](https://open-meteo.com) provides geocoding and weather data. It does not require an API key. To use another weather API, replace `fetchCity` and `fetchWeather` in `script.js`.
 
 ## Run
 Open `index.html` in a browser (needs an internet connection).

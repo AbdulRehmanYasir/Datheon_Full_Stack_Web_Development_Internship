@@ -1,4 +1,3 @@
-// Weather data comes from Open-Meteo (free, no API key needed).
 const GEO_URL = "https://geocoding-api.open-meteo.com/v1/search";
 const WEATHER_URL = "https://api.open-meteo.com/v1/forecast";
 
@@ -8,7 +7,6 @@ const input = $("#city-input");
 const searchButton = $("#search-button");
 let searchVersion = 0;
 
-// ---- weather code lookup (WMO codes used by Open-Meteo) ----
 function describe(code, isDay) {
   if (code === 0) return isDay ? { label: "Sunny", icon: "sun", mood: "clear-day" } : { label: "Clear night", icon: "moon", mood: "clear-night" };
   if (code <= 2) return { label: "Partly cloudy", icon: isDay ? "partly" : "partlyNight", mood: isDay ? "clear-day" : "clear-night" };
@@ -22,7 +20,6 @@ function describe(code, isDay) {
   return { label: "Thunderstorm", icon: "storm", mood: "storm" };
 }
 
-// ---- inline SVG icons ----
 const cloud = `<path d="M18 46a10 10 0 0 1 1-20 14 14 0 0 1 27 4 8 8 0 0 1-1 16z" fill="#eef3f8"/>`;
 const sunShape = (x, y, r) => `<circle cx="${x}" cy="${y}" r="${r}" fill="#ffc940"/><g stroke="#ffc940" stroke-width="3" stroke-linecap="round" transform="translate(${x - 32} ${y - 32})"><path d="M32 8v6M32 50v6M8 32h6M50 32h6M15 15l4 4M45 45l4 4M15 49l4-4M45 19l4-4"/></g>`;
 const moonShape = `<path d="M40 14a16 16 0 1 0 12 26A19 19 0 0 1 40 14z" fill="#f1e9c6"/>`;
@@ -39,7 +36,6 @@ const ICONS = {
 };
 const svg = (name) => `<svg viewBox="0 0 64 64" role="img" aria-hidden="true">${ICONS[name]}</svg>`;
 
-// ---- network ----
 async function getJSON(url) {
   const res = await fetch(url);
   if (!res.ok) throw new Error(`Request failed (${res.status})`);
@@ -65,7 +61,6 @@ async function fetchWeather({ latitude, longitude }) {
   return getJSON(`${WEATHER_URL}?${params}`);
 }
 
-// ---- UI ----
 function setState({ loading = false, error = "", show = false }) {
   $("#loader").hidden = !loading;
   $("#error").hidden = !error;
@@ -111,7 +106,7 @@ async function search(name) {
     if (version !== searchVersion) return;
     renderWeather(place, weather);
     setState({ show: true });
-    try { localStorage.setItem("skyline.lastCity", name); } catch { /* ignore */ }
+    try { localStorage.setItem("skyline.lastCity", name); } catch {}
   } catch (err) {
     if (version !== searchVersion) return;
     const offline = err instanceof TypeError;
@@ -128,6 +123,6 @@ form.addEventListener("submit", (e) => {
 });
 
 let last = "Lahore";
-try { last = localStorage.getItem("skyline.lastCity") || last; } catch { /* ignore */ }
+try { last = localStorage.getItem("skyline.lastCity") || last; } catch {}
 input.value = last;
 search(last);

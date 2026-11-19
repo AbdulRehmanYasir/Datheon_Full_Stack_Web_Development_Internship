@@ -1,6 +1,5 @@
 const STORAGE_KEY = "taskbook.tasks.v1";
 
-// ---- state ----
 let tasks = loadFromLocalStorage();
 let filter = "all";
 let query = "";
@@ -11,7 +10,6 @@ let enteringId = null;
 const $ = (s) => document.querySelector(s);
 const listEl = $("#task-list");
 
-// ---- storage ----
 function loadFromLocalStorage() {
   try {
     const raw = JSON.parse(localStorage.getItem(STORAGE_KEY));
@@ -29,11 +27,10 @@ function loadFromLocalStorage() {
   }
 }
 function saveToLocalStorage() {
-  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks)); } catch { /* storage unavailable */ }
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks)); } catch {}
 }
 function commit() { saveToLocalStorage(); render(); }
 
-// ---- CRUD ----
 function addTask(text, category, due) {
   enteringId = globalThis.crypto?.randomUUID?.() || String(Date.now());
   tasks.unshift({ id: enteringId, text, category, due, done: false });
@@ -60,9 +57,8 @@ function clearCompleted() {
   commit();
 }
 
-// ---- helpers ----
 const esc = (s) => s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-const todayStr = () => new Date().toLocaleDateString("en-CA"); // YYYY-MM-DD in local time
+const todayStr = () => new Date().toLocaleDateString("en-CA");
 function dueLabel(t) {
   if (!t.due) return "";
   const label = new Date(t.due + "T00:00").toLocaleDateString(undefined, { weekday: "short", day: "numeric", month: "short" });
@@ -77,7 +73,6 @@ function visibleTasks() {
   );
 }
 
-// ---- render ----
 function render() {
   const shown = visibleTasks();
   const canDrag = filter === "all" && !query.trim();
@@ -118,7 +113,6 @@ function render() {
   if (input) { input.focus(); input.setSelectionRange(input.value.length, input.value.length); }
 }
 
-// ---- events ----
 $("#task-form").addEventListener("submit", (e) => {
   e.preventDefault();
   const text = $("#task-input").value.trim();
@@ -164,7 +158,6 @@ listEl.addEventListener("focusout", (e) => {
   if (e.target.matches(".edit-input") && editingId) updateTask(e.target.closest(".task").dataset.id, e.target.value);
 });
 
-// drag and drop reordering
 listEl.addEventListener("dragstart", (e) => {
   const li = e.target.closest(".task");
   if (!li) return;
